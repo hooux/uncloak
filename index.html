@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detection Demo</title>
+<style>
+  body { font-family: sans-serif; max-width: 600px; margin: 40px auto; line-height: 1.6; padding: 20px; background: #000; color: #ccc; }
+  pre { background: transparent; padding: 15px; border-radius: 6px; white-space: pre-wrap; }
+  p { margin: 20px auto; }
+</style>
+</head>
+<body>
+
+<h1>Free Zero‑Input Anti‑Evasion API</h1>
+<p>in‑memory real‑time semantic analysis</p>
+<p>No parameters. No headers. No cookies. No scripts. No client‑side data.</p>
+<p>Detect VPNs, residential proxies, emulators, proxy chains, automation tools, and other forms of network‑level evasion.</p>
+<p>This page uses plain, transparent HTML.</p>
+
+<p>
+Free API with rate limits. No guarantees on stability, availability, or accuracy.<br><br>
+Automatically works over both IPv4 and IPv6.<br>
+https://freeapi.uncloak.cloud/sklivedemo
+</p>
+
+<button onclick="runDetect()" 
+        style="font-size:16px; cursor:pointer; display:block; margin:20px auto;">
+    Run Detection
+</button>
+
+<pre id="output"></pre>
+
+<script>
+  async function runDetect() {
+    const output = document.getElementById('output');
+    output.textContent = "Running…";
+
+    try {
+        const res = await fetch("https://freeapi.uncloak.cloud/sklivedemo");
+        output.textContent = JSON.stringify(await res.json(), null, 2);
+    } catch (err) {
+        output.textContent = "Request failed: " + err;
+    }
+  }
+</script>
+</body>
+</html>
