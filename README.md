@@ -5,7 +5,6 @@
 
 <p>
 Free API with rate limits. No guarantees on stability, availability, or accuracy.<br><br>
-Automatically works over both IPv4 and IPv6.
 </p>
 
 https://hooux.github.io/uncloak
